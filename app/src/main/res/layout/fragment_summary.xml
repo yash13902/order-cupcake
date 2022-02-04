@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name = "viewModel"
+            type = "com.example.ordercupcake.OrderViewModel"/>
+
+        <variable
+            name="summaryFragment"
+            type="com.example.ordercupcake.SummaryFragment" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SummaryFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:focusable="true"
+            android:layout_margin="16dp">
+
+            <TextView
+                android:id="@+id/tvQuantityLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quantity"
+                android:textAllCaps="true"
+                android:layout_margin="5dp"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:id="@+id/tvQuantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textSize="20sp"
+                android:text = "@{viewModel.quantity.toString()}"/>
+
+            <TextView
+                android:id="@+id/tvFlavourLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Flavour"
+                android:textAllCaps="true"
+                android:layout_margin="5dp"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:id="@+id/tvFlavour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.flavor}"
+                android:layout_margin="5dp"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/tvPickupLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pickup Date"
+                android:textAllCaps="true"
+                android:layout_margin="5dp"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:id="@+id/tvDay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.date}"
+                android:layout_margin="5dp"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/tvTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{@string/subtotal_price(viewModel.price)}"
+                android:textAllCaps="true"
+                android:layout_gravity="end"
+                android:layout_margin="5dp"
+                android:textSize="24sp"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            android:layout_margin="16dp"
+            android:onClick="@{() -> summaryFragment.goToNextScreen()}"/>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

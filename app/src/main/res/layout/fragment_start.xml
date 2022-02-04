@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name = "startFragment"
+            type = "com.example.ordercupcake.StartFragment"/>
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <Button
+        android:id="@+id/btn1Cup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1 cupcake"
+        app:layout_constraintBottom_toTopOf="@+id/btn6Cup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="@{() -> startFragment.navigate(1)}"/>
+
+    <Button
+        android:id="@+id/btn6Cup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="6 cupcake"
+        app:layout_constraintBottom_toTopOf="@+id/btn12Cup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn1Cup"
+        android:onClick="@{() -> startFragment.navigate(6)}"/>
+
+    <Button
+        android:id="@+id/btn12Cup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12 cupcake"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn6Cup"
+        android:onClick="@{() -> startFragment.navigate(12)}"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
